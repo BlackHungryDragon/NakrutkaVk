@@ -12,7 +12,7 @@ banner="""
 
 print(Fore.WHITE+banner)
 print(" Введите токен .")
-token = int(input(" токен:"))
+token = input(" токен:")
 vk_session = vk_api.VkApi(token=token)
 vk = vk_session.get_api()
 print(Fore.YELLOW+'  Меню функций . \n [1] Лайки .  [2] Подписки. \n ')
