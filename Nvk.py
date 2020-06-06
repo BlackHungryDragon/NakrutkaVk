@@ -10,8 +10,9 @@ banner="""
 
 """
 
-token = "bbea0638bef0ffbf708689fcb10a4d349cc38c0bd456c74cc6aebf6f0c6013434343b9af6136ac39d2bb7"
 print(Fore.WHITE+banner)
+print(" Введите токен .")
+token = int(input(" токен:"))
 vk_session = vk_api.VkApi(token=token)
 vk = vk_session.get_api()
 print(Fore.YELLOW+'  Меню функций . \n [1] Лайки .  [2] Подписки. \n ')
@@ -24,15 +25,18 @@ if doings == 1:
       id=int(input(' id поста:'))
       def post():
          vk.likes.add(type ="post",owner_id=user_id,item_id=id)
+         print("\n Действие прошло успешно")
       post()
    elif twodoings == 1:
       user_id=int(input(' id пользователя:'))
-      id=int(input(' id: '))
+      id=int(input(' id фото: '))
       def photo():
          vk.likes.add(type ="photo",owner_id=user_id,item_id=id)
+         print("\n Действие прошло успешно.")
+
       photo()
 elif doings == 2:
-   id=int(input(' id: '))
+   id=int(input(' id группы : '))
    vk.groups.join(group_id=group)
    print(group)
-   print("\n Успешно")
+   print("\n Действие прошло успешно.")
